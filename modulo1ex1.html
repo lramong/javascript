@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Modulo 1 Ex 1</title>
+  </head>
+  <body>
+    <script>
+      var endereco = {
+        rua: "Rua dos pinheiros",
+        numero: 1293,
+        bairro: "Centro",
+        cidade: "São Paulo",
+        uf: "SP"
+      };
+
+      function exibeTexto(){
+        var texto = 'O usuário mora em ' 
+        + endereco.cidade + ' / ' 
+        + endereco.uf + ', no bairro '
+        + endereco.bairro + ', na rua "'
+        + endereco.rua + '" com n° '
+        + endereco.numero + '.' 
+
+        return texto;
+      }
+
+      console.log(exibeTexto());
+    </script>
+  </body>
+</html>

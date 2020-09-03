@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Módulo 2 - Ex 3</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script>
+
+    // definindo lista de nomes
+    var nomes = ["Diego", "Gabriel", "Lucas"];
+
+    // selecionando a div principal
+    var app = document.querySelector("#app");
+
+    // criando lista
+    var list = document.createElement('ul');
+  
+    // adicionando itens da lista
+    for (i = 0; i < nomes.length; i++) {
+      // cria um elemento 'list item'
+      var item = document.createElement('li');
+      // insere um texto em sua propriedade para exibição
+      item.appendChild(document.createTextNode(nomes[i]));
+      // conecta o item na lista
+      list.appendChild(item);
+    }
+    
+    // conecta a lista na aplicação
+    app.appendChild(list);
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <tittle>Modulo 2 - Ex 1</tittle>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script>
+    var containerElement = document.querySelector('#app');
+    var buttonElement = document.createElement('button');
+    var textElement = document.createTextNode('Clique Aqui');
+    buttonElement.appendChild(textElement);
+
+    containerElement.appendChild(buttonElement);
+
+    buttonElement.onclick = function () {
+      var boxElement = document.createElement('div');
+
+      boxElement.style.width = 100;
+      boxElement.style.height = 100;
+      boxElement.style.backgroundColor = '#f00';
+
+      containerElement.appendChild(boxElement);
+    }
+
+  </script>
+</body>
+
+</html>

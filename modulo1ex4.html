@@ -1,0 +1,32 @@
+<html>
+
+<head>
+  <title>Modulo 1 Ex 4</title>
+</head>
+
+<body>
+  <script>
+
+    function experiencia(anos) {
+
+      var level = ['Iniciante', 'Intermediario', 'Avançado', 'Jedi Master'];
+
+      if (anos >= 0 && anos <= 1) {
+        console.log(level[0]);
+      } else if (anos > 1 && anos <= 3) {
+        console.log(level[1]);
+      } else if (anos > 3 && anos <= 6) {
+        console.log(level[2]);
+      } else if (anos >= 7) {
+        console.log(level[3]);
+      }
+
+    }
+
+    var anosEstudo = 7;
+    experiencia(anosEstudo);
+
+  </script>
+</body>
+
+</html>

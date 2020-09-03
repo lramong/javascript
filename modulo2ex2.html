@@ -1,0 +1,64 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Modulo 2 - Exercicio 2</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script>
+    // referenciando a div do aplicativo
+    var containerElement = document.querySelector('#app');
+    // criando elementos da tela
+
+    var textElement = document.createTextNode("Gerar Box");
+    var buttonElement = document.createElement('button');
+
+    // vinculando texto ao botao
+    buttonElement.appendChild(textElement);
+
+    // inserindo botão na aplicação
+    containerElement.appendChild(buttonElement);
+
+    function getRandomColor() {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+    var newColor = getRandomColor();
+
+    // criando evento ao clicar no botao
+    buttonElement.onclick = function createBox() {
+      // criando nova div
+      var boxElement = document.createElement('div');
+
+      // definindo estilos da div
+      boxElement.style.height = 100;
+      boxElement.style.width = 100;
+      boxElement.style.backgroundColor = '#f00';
+
+      
+      // adicionando propriedade de mudanca de cor
+      boxElement.onmouseover = function () {
+        var rndColor = getRandomColor();
+        boxElement.style.backgroundColor = rndColor;
+      }
+
+      boxElement.onmouseout = function () {
+        boxElement.style.backgroundColor = '#f00';
+      }
+
+      // vinculando a div na aplicação
+      containerElement.appendChild(boxElement);
+    }
+
+  </script>
+  
+</body>
+
+</html>

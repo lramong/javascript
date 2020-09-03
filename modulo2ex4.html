@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Módulo 2 - Ex 4</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" name="nome">
+    <button onclick="adicionar()">Adicionar</button>
+  </div>
+
+  <script>
+    // definindo lista de nomes
+    var nomes = ["Diego", "Gabriel", "Lucas"];
+    // selecionando a div principal
+    var app = document.querySelector("#app");
+
+    // criando lista
+    var list = document.createElement('ul');
+
+    // adicionando itens da lista
+    for (i = 0; i < nomes.length; i++) {
+      // cria um elemento 'list item'
+      var item = document.createElement('li');
+      // insere um texto em sua propriedade para exibição
+      item.appendChild(document.createTextNode(nomes[i]));
+      // conecta o item na lista
+      list.appendChild(item);
+    }
+    // conecta a lista na aplicação
+    app.appendChild(list);
+
+    function adicionar() {
+      var oldList = list;
+      var newList = document.createElement('ul');
+      var text = document.querySelector('input');
+      var conteudo = text.value;
+      console.log(conteudo);
+
+      for (i = 0; i < oldList.length; i++) {
+        var newItem = document.createElement('li');
+        newItem.appendChild(document.createTextNode(conteudo));
+        newList.appendChild(newItem);
+      }
+      // var newLi = document.createElement('li');
+      // newLi.appendChild(document.createTextNode(conteudo));
+      // newList = oldList + oldLi;
+
+      app.removeChild(list);
+      app.appendChild(newList);
+      list = newList;
+      text.value = '';
+      text.autofocus;
+
+
+    }
+
+  </script>
+
+</body>
+
+</html>
