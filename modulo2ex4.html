@@ -33,25 +33,24 @@
     app.appendChild(list);
 
     function adicionar() {
-      var oldList = list;
+      var oldList = new Array (list);
+      
       var newList = document.createElement('ul');
+      newList = list;
       var text = document.querySelector('input');
       var conteudo = text.value;
-      console.log(conteudo);
-
+      
       for (i = 0; i < oldList.length; i++) {
-        var newItem = document.createElement('li');
-        newItem.appendChild(document.createTextNode(conteudo));
+        newItem = document.createElement('li');
+        newItem.appendChild(document.createTextNode(text.value));
         newList.appendChild(newItem);
       }
-      // var newLi = document.createElement('li');
-      // newLi.appendChild(document.createTextNode(conteudo));
-      // newList = oldList + oldLi;
 
       app.removeChild(list);
       app.appendChild(newList);
       list = newList;
-      text.value = '';
+      text.value = null;
+      text.focus();
     }
 
   </script>
